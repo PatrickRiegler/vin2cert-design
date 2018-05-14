@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost/demonstrator/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>VIN2Cert (VIN to CertificateID conversion REST Service)</title>
+
+    <meta name="description" content="Demonstrator for VIN2Cert (VIN ==&gt; CertificateID WebService)">
+    <meta name="author" content="RiPro GmbH">
+
+    <link href="./VIN2Cert_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./VIN2Cert_files/prism.min.css" rel="stylesheet">
+
+<script>
+ var WSURL='127.0.0.1'
+ var WSPORT='1337'
+ var APIURL="http://127.0.0.1:8080/vin2cert/vin2cert.php"</script>
+
+    <link href="./VIN2Cert_files/code-box-copy.css" rel="stylesheet">
+    <link href="./VIN2Cert_files/style.css" rel="stylesheet">
+
+  </head>
+  <!-- <body style="background-image: url('bg.gif'); background-color: gray; "> -->
+  <body style="background-color: gray; ">
+
+    <div id="fullScreenDiv">
+        <div id="videoDiv">           
+            <video preload="preload" id="video" autoplay="autoplay" loop="loop" muted="">
+            <source src="mp4/cars.mp4" type="video/mp4">
+            </video> 
+        </div>
+  <div class="mdiv">
+  <div class="row">
+    <div class="col-md-4 cbox">
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				<label for="testVINs">
+					Test VINs:
+				</label>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" id="testVINs" data-toggle="dropdown" aria-expanded="false">
+					Select VIN Number:
+				</button>
+				<div class="dropdown-menu" aria-labelledby="testVINs" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+					 <a class="dropdown-item" href="http://localhost/demonstrator/#" onclick="startVIN(this.id)" id="WDD2210561A233135">WDD2210561A233135</a>
+					 <a class="dropdown-item" href="http://localhost/demonstrator/#" onclick="startVIN(this.id)" id="WAUZZZ4L0BD004645">WAUZZZ4L0BD004645</a>
+				</div>
+			</div>
+			<br>
+			<form>
+				<div class="form-group">
+					 
+					<label for="vin">
+						VIN Number:
+					</label>
+					<input type="text" class="form-control" id="vin" size="16" maxlength="16">
+				</div>
+				<button type="submit" class="btn btn-primary" onclick="startVIN($(&#39;#vin&#39;).val());">
+					Start
+				</button>
+			</form>
+		</div>
+	</div>
+    </div>
+    <div class="col-md-4">
+	&nbsp;
+    </div>
+    <div class="col-md-4 cbox cbox-right">
+	<div id="crid">ID: ca1553ea16457a675dfeee60f586914d</div>
+	<div id="crvin">VIN: WDD2210561A233135</div>
+    </div>
+  </div>
+	<br><br>
+  <div class="cdiv">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="progress">
+				<div id="statusbar" class="progress-bar w-0 progress-bar-striped progress-bar-animated bg-warning" style="width: 25%;">
+				</div>
+			</div>
+			<div id="card-404583">
+				<div class="card clone" id="ca1553ea16457a675dfeee60f586914d-vindecode-getFields">
+					<div class="card-header">
+						 <a class="card-link" data-toggle="collapse" data-parent="#card-404583" href="http://localhost/demonstrator/#ceca1553ea16457a675dfeee60f586914d-vindecode-getFields" aria-expanded="true">
+							<div class="row tbody">
+								<div class="col-md-3">vindecode</div>
+								<div class="col-md-3">getFields</div>
+								<div class="col-md-3">success</div>
+								<div class="col-md-3">241 ms</div>
+							</div>
+						 </a>
+					</div>
+					<div id="ceca1553ea16457a675dfeee60f586914d-vindecode-getFields" class="hide collapse show" style="">
+						<div class="card-block">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6 result-left code-box-copy">{
+  <span class="key">"id":</span> <span class="string">"ca1553ea16457a675dfeee60f586914d"</span>,
+  <span class="key">"vin":</span> <span class="string">"WDD2210561A233135"</span>,
+  <span class="key">"step":</span> <span class="string">"vindecode"</span>,
+  <span class="key">"stepDetail":</span> <span class="string">"getFields"</span>,
+  <span class="key">"result":</span> <span class="string">"success"</span>,
+  <span class="key">"responseTime":</span> <span class="number">0.24114298820495605</span>,
+  <span class="key">"detail":</span> {
+    <span class="key">"decode":</span> [
+      <span class="string">"Make"</span>,
+      <span class="string">"Manufacturer"</span>,
+      <span class="string">"Plant Country"</span>,
+      <span class="string">"Product Type"</span>,
+      <span class="string">"Manufacturer Address"</span>,
+      <span class="string">"Model"</span>,
+      <span class="string">"Check Digit"</span>,
+      <span class="string">"Sequential Number"</span>,
+      <span class="string">"Model Year"</span>,
+      <span class="string">"Body"</span>,
+      <span class="string">"Drive"</span>,
+      <span class="string">"Number of Seats"</span>,
+      <span class="string">"Number of Doors"</span>,
+      <span class="string">"Fuel Type - Primary"</span>,
+      <span class="string">"Engine Displacement (ccm)"</span>,
+      <span class="string">"Engine Power (kW)"</span>,
+      <span class="string">"Engine Cylinders"</span>,
+      <span class="string">"Transmission"</span>,
+      <span class="string">"Number of Gears"</span>
+    ]
+  }
+}</div>
+<button class="code-box-copy__btn" data-clipboard-target="#example-html" title="Copy"></button>
+									<div class="col-md-6 result-right code-box-copy"><button class="code-box-copy__btn" data-clipboard-target="#ca1553ea16457a675dfeee60f586914d-right-json" title="Copy"></button><pre><code class="language-javascript" id="ca1553ea16457a675dfeee60f586914d-right-json">{
+  "id": "ca1553ea16457a675dfeee60f586914d",
+  "vin": "WDD2210561A233135",
+  "step": "vindecode",
+  "stepDetail": "getFields",
+  "result": "success",
+  "responseTime": 0.24114298820495605,
+  "detail": {
+    "decode": [
+      "Make",
+      "Manufacturer",
+      "Plant Country",
+      "Product Type",
+      "Manufacturer Address",
+      "Model",
+      "Check Digit",
+      "Sequential Number",
+      "Model Year",
+      "Body",
+      "Drive",
+      "Number of Seats",
+      "Number of Doors",
+      "Fuel Type - Primary",
+      "Engine Displacement (ccm)",
+      "Engine Power (kW)",
+      "Engine Cylinders",
+      "Transmission",
+      "Number of Gears"
+    ]
+  }
+}</code></pre></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><div class="card clone" id="ca1553ea16457a675dfeee60f586914d-vindecode-getResult">
+					<div class="card-header">
+						 <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-404583" href="http://localhost/demonstrator/#ceca1553ea16457a675dfeee60f586914d-vindecode-getResult" aria-expanded="false">
+							<div class="row tbody">
+								<div class="col-md-3">vindecode</div>
+								<div class="col-md-3">getResult</div>
+								<div class="col-md-3">success</div>
+								<div class="col-md-3">305 ms</div>
+							</div>
+						 </a>
+					</div>
+					<div id="ceca1553ea16457a675dfeee60f586914d-vindecode-getResult" class="collapse hide">
+						<div class="card-block">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6 result-left code-box-copy">{
+  <span class="key">"id":</span> <span class="string">"ca1553ea16457a675dfeee60f586914d"</span>,
+  <span class="key">"vin":</span> <span class="string">"WDD2210561A233135"</span>,
+  <span class="key">"step":</span> <span class="string">"vindecode"</span>,
+  <span class="key">"stepDetail":</span> <span class="string">"getResult"</span>,
+  <span class="key">"result":</span> <span class="string">"success"</span>,
+  <span class="key">"responseTime":</span> <span class="number">0.30504298210144043</span>,
+  <span class="key">"detail":</span> {
+    <span class="key">"price":</span> <span class="number">0</span>,
+    <span class="key">"price_currency":</span> <span class="string">"USD"</span>,
+    <span class="key">"balance":</span> {
+      <span class="key">"API Decode":</span> <span class="number">16</span>
+    },
+    <span class="key">"decode":</span> [
+      {
+        <span class="key">"label":</span> <span class="string">"Make"</span>,
+        <span class="key">"value":</span> <span class="string">"Mercedes-Benz"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Manufacturer"</span>,
+        <span class="key">"value":</span> <span class="string">"Daimler AG"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Plant Country"</span>,
+        <span class="key">"value":</span> <span class="string">"Germany"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Product Type"</span>,
+        <span class="key">"value":</span> <span class="string">"Vehicles - all types"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Manufacturer Address"</span>,
+        <span class="key">"value":</span> <span class="string">"Mercedesstrasse 137, D-70546 Stuttgart, Germany"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Model"</span>,
+        <span class="key">"value":</span> <span class="string">"Class S"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Check Digit"</span>,
+        <span class="key">"value":</span> <span class="string">"6"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Sequential Number"</span>,
+        <span class="key">"value":</span> <span class="string">"233135"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Model Year"</span>,
+        <span class="key">"value":</span> <span class="number">2001</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Body"</span>,
+        <span class="key">"value":</span> <span class="string">"Sedan/Saloon"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Drive"</span>,
+        <span class="key">"value":</span> <span class="string">"Rear-wheel drive"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Number of Seats"</span>,
+        <span class="key">"value":</span> <span class="number">5</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Number of Doors"</span>,
+        <span class="key">"value":</span> <span class="number">4</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Fuel Type - Primary"</span>,
+        <span class="key">"value":</span> <span class="string">"Gasoline"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Engine Displacement (ccm)"</span>,
+        <span class="key">"value":</span> <span class="number">3498</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Engine Power (kW)"</span>,
+        <span class="key">"value":</span> <span class="number">200</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Engine Cylinders"</span>,
+        <span class="key">"value":</span> <span class="number">6</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Transmission"</span>,
+        <span class="key">"value":</span> <span class="string">"Automatic"</span>
+      },
+      {
+        <span class="key">"label":</span> <span class="string">"Number of Gears"</span>,
+        <span class="key">"value":</span> <span class="number">7</span>
+      }
+    ]
+  }
+}</div>
+<button class="code-box-copy__btn" data-clipboard-target="#example-html" title="Copy"></button>
+									<div class="col-md-6 result-right code-box-copy"><button class="code-box-copy__btn" data-clipboard-target="#ca1553ea16457a675dfeee60f586914d-right-json" title="Copy"></button><pre><code class="language-javascript" id="ca1553ea16457a675dfeee60f586914d-right-json">{
+  "id": "ca1553ea16457a675dfeee60f586914d",
+  "vin": "WDD2210561A233135",
+  "step": "vindecode",
+  "stepDetail": "getResult",
+  "result": "success",
+  "responseTime": 0.30504298210144043,
+  "detail": {
+    "price": 0,
+    "price_currency": "USD",
+    "balance": {
+      "API Decode": 16
+    },
+    "decode": [
+      {
+        "label": "Make",
+        "value": "Mercedes-Benz"
+      },
+      {
+        "label": "Manufacturer",
+        "value": "Daimler AG"
+      },
+      {
+        "label": "Plant Country",
+        "value": "Germany"
+      },
+      {
+        "label": "Product Type",
+        "value": "Vehicles - all types"
+      },
+      {
+        "label": "Manufacturer Address",
+        "value": "Mercedesstrasse 137, D-70546 Stuttgart, Germany"
+      },
+      {
+        "label": "Model",
+        "value": "Class S"
+      },
+      {
+        "label": "Check Digit",
+        "value": "6"
+      },
+      {
+        "label": "Sequential Number",
+        "value": "233135"
+      },
+      {
+        "label": "Model Year",
+        "value": 2001
+      },
+      {
+        "label": "Body",
+        "value": "Sedan/Saloon"
+      },
+      {
+        "label": "Drive",
+        "value": "Rear-wheel drive"
+      },
+      {
+        "label": "Number of Seats",
+        "value": 5
+      },
+      {
+        "label": "Number of Doors",
+        "value": 4
+      },
+      {
+        "label": "Fuel Type - Primary",
+        "value": "Gasoline"
+      },
+      {
+        "label": "Engine Displacement (ccm)",
+        "value": 3498
+      },
+      {
+        "label": "Engine Power (kW)",
+        "value": 200
+      },
+      {
+        "label": "Engine Cylinders",
+        "value": 6
+      },
+      {
+        "label": "Transmission",
+        "value": "Automatic"
+      },
+      {
+        "label": "Number of Gears",
+        "value": 7
+      }
+    ]
+  }
+}</code></pre></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><div class="card d-none template">
+					<div class="card-header">
+						 <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-404583" href="http://localhost/demonstrator/#card-element-748509" aria-expanded="false">
+							<div class="row tbody">
+								<div class="col-md-3">Step</div>
+								<div class="col-md-3">StepDetail</div>
+								<div class="col-md-3">Status</div>
+								<div class="col-md-3">Response Time</div>
+							</div>
+						 </a>
+					</div>
+					<div id="card-element-748509" class="collapse hide">
+						<div class="card-block">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6 result-left code-box-copy">
+										Links
+									</div>
+<button class="code-box-copy__btn" data-clipboard-target="#example-html" title="Copy"></button>
+									<div class="col-md-6 result-right code-box-copy">
+										Rechts
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    </div>
+    </div>
+  </div>
+
+
+    <script src="./VIN2Cert_files/jquery-3.3.1.min.js"></script>
+    <script src="./VIN2Cert_files/bootstrap.bundle.min.js"></script>
+    <script src="./VIN2Cert_files/md5.min.js"></script>
+    <script src="./VIN2Cert_files/prism.min.js"></script>
+    <script src="./VIN2Cert_files/clipboard.min.js"></script>
+    <script src="./VIN2Cert_files/debugbar.js"></script>
+    <script src="./VIN2Cert_files/code-box-copy.js"></script>
+    <script src="./VIN2Cert_files/scripts.js"></script>
+  
+
+</body></html>
